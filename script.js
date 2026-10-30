@@ -751,25 +751,30 @@ function render(){
  if(p.id==="territoire") bindTerritory(p);
  if(p.species) bindSpecies(p);
 }
+
 function go(i){
  if(changing)return;
  i=(i+pages.length)%pages.length;
- if(i===current){document.querySelector(".viewport").scrollTo({top:0,behavior:"smooth"});return}
+ if(i===current){
+  window.scrollTo({top:0,behavior:"instant"});
+  return;
+ }
  const useMobileTransition=window.matchMedia("(max-width: 760px)").matches;
  if(!useMobileTransition){
   current=i;history.replaceState(null,"","#"+pages[current].id);
   page.style.animation="none";void page.offsetWidth;page.style.animation="";
-  render();document.querySelector(".viewport").scrollTo({top:0,behavior:"instant"});
+  render();window.scrollTo({top:0,behavior:"instant"});
   return;
  }
  changing=true;wipe.classList.remove("run");void wipe.offsetWidth;wipe.classList.add("run");
  setTimeout(()=>{
   current=i;history.replaceState(null,"","#"+pages[current].id);
   page.style.animation="none";void page.offsetWidth;page.style.animation="";
-  render();document.querySelector(".viewport").scrollTo({top:0,behavior:"instant"});
+  render();window.scrollTo({top:0,behavior:"instant"});
  },300);
  setTimeout(()=>{changing=false;wipe.classList.remove("run")},700);
 }
+
 function searchNow(){
  const q=search.value.trim().toLowerCase();
  if(!q){results.classList.remove("show");results.innerHTML="";return}
