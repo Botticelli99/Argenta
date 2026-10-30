@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d0c">
+<title>Argenta — Archives du Royaume</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="crest">
+      <div class="crestMark"><b>A</b></div>
+      <div><small>Archives / Royaume</small><strong>ARGENTA</strong></div>
+    </div>
+    <nav id="nav" class="nav" aria-label="Index"></nav>
+    <div class="mobileMenuBar" aria-label="Navigation mobile">
+      <div class="mobileMenuCurrent" id="mobileMenuCurrent">Le Royaume</div>
+      <button type="button" class="mobileMenuToggle" id="mobileMenuToggle" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
+    </div>
+    <div class="railFoot">
+      <div class="micro">RÉFÉRENTIEL<br>ÉVOLUTIF / 01</div>
+      <div class="lunarClock" id="lunarClock" title="Horloge et phase lunaire"><span class="lunarMoon" id="lunarMoon" aria-hidden="true">◐</span><span class="lunarTime" id="lunarTime">--:--</span></div>
+    </div>
+  </aside>
+
+  <main class="viewport">
+    <header class="topbar">
+      <div class="route" id="route">ARGENTA / ARCHIVES</div>
+      <div class="topRight">
+        <div>
+          <div class="pageType" id="pageType">Vue générale</div>
+          <div class="currentTitle" id="currentTitle">Le Royaume</div>
+        </div>
+        <div class="searchWrap">
+          <label class="searchLabel">
+            <span>⌕</span>
+            <input id="search" type="search" placeholder="Rechercher une page…" autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <div class="results" id="results"></div>
+        </div>
+      </div>
+    </header>
+    <article class="page" id="page"></article>
+  </main>
+
+  <aside class="wheelArea" aria-label="Navigation circulaire">
+    <div class="arc"></div>
+    <div class="wheelHint">MOLETTE</div>
+  </aside>
+</div>
+<div class="mobileMenuPanel" id="mobileMenuPanel" aria-label="Index mobile"></div>
+<div class="wipe" id="wipe"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
